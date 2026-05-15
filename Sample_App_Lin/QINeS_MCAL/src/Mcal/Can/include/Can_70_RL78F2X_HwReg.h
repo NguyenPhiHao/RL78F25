@@ -14,7 +14,6 @@
 /******************************************************************************/
 /* Specification of CAN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef CAN_70_RL78F2X_HWREG_H
 #define CAN_70_RL78F2X_HWREG_H
 
@@ -514,4 +513,5 @@ extern volatile const Can_70_RL78F2X_CanControllerRegInfoType Can_70_CanControll
 extern const Can_70_InterruptBitAssignType Can_70_InterruptBitAssign[ CAN_70_NUM_OF_CAN_CHANNEL ];
 
 #endif  /* #ifndef CAN_70_RL78F2X_HWREG_H */
+
 /* EOF Can_70_RL78F2X_HwReg.h *************************************************/

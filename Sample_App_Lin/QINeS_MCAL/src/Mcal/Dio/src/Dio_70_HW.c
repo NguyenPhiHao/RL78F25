@@ -11,7 +11,6 @@
 /******************************************************************************/
 /* Specification of DIO Module wrapper                                        */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
@@ -199,4 +198,5 @@ void  Dio_70_HW_MaskedWritePort( Dio_PortType PortId, Dio_PortLevelType Level,
 #endif /* #if ( DIO_MASKED_WRITE_PORT_API != FALSE ) */
 #define DIO_STOP_SEC_CODE_LOCAL
 #include "Dio_MemMap.h"
+
 /* EOF Dio_70_HW.c  ***********************************************************/

@@ -1107,5 +1107,5 @@ static Std_ReturnType spi_checkTransmitStart( Spi_HWUnitType hwUnit )
  
 #define SPI_STOP_SEC_CODE_LOCAL
 #include "Spi_MemMap.h"
- 
-/**************** End Of File Spi_70_RL78F2X.c ********************************/
+
+/* EOF Spi_70_RL78F2X.c *******************************************************/

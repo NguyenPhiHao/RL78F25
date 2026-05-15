@@ -531,4 +531,3 @@ LOCAL_INLINE void wdg_modeSettings( const WdgIf_ModeType mode )
 #include "Wdg_MemMap.h"
  
 /* EOF Wdg.c ******************************************************************/
- 

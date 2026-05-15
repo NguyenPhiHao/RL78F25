@@ -14,7 +14,6 @@
 /******************************************************************************/
 /* Specification of CAN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 #ifndef CAN_70_RL78F2X_H
 #define CAN_70_RL78F2X_H
@@ -233,4 +232,5 @@ extern void Can_70_RL78F2X_SetCanFd( uint8 Controller, const Can_ConfigSetType* 
 #endif /* #if ( CAN_70_USE_CANFD == TRUE ) */
 
 #endif  /* #ifndef CAN_70_RL78F2X_H */
-/* EOF Can_70_RL78F2X.h ****************************************************************/
+
+/* EOF Can_70_RL78F2X.h *******************************************************/

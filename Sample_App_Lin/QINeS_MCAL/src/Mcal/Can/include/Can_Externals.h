@@ -10,7 +10,6 @@
 /******************************************************************************/
 /* Specification of CAN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef CAN_EXTERNAL_H
 #define CAN_EXTERNAL_H
 
@@ -190,4 +189,5 @@ extern bool_t LPDU_Callout_Func( uint8 Hrh, Can_IdType CanId, uint8 CanDataLegth
 #include "Can_MemMap.h"
 
 #endif  /* #ifndef CAN_EXTERNAL_H */
-/* EOF Can_Externals.h ****************************************************************/
+
+/* EOF Can_Externals.h ********************************************************/

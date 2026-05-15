@@ -149,3 +149,5 @@ bool_t LPDU_Callout_Func( uint8 Hrh, Can_IdType CanId, uint8 CanDataLength, cons
 {
     return TRUE;
 }
+
+/* EOF SampleCan.c ************************************************************/

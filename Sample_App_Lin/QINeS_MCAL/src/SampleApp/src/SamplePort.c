@@ -67,3 +67,5 @@ void SamplePort( void ) {
     }
 }
 #endif
+
+/* EOF SamplePort.c ***********************************************************/

@@ -14,7 +14,6 @@
 /******************************************************************************/
 /* Specification of CAN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 #ifndef CAN_H
 #define CAN_H
@@ -280,4 +279,4 @@ extern Std_ReturnType Can_GetIngressTimeStamp( Can_HwHandleType Hrh, Can_TimeSta
 #include "Can_MemMap.h"
 
 #endif  /* #ifndef CAN_H */
-/* EOF Can.h ****************************************************************/
+/* EOF Can.h ******************************************************************/

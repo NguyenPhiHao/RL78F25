@@ -12,7 +12,6 @@
 /******************************************************************************/
 /* Specification of WDG Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
@@ -44,7 +43,6 @@
 #if ( WDG_70_MODULE_ID_RL78F2X_C != WDG_70_MODULE_ID_RL78F2X_H )
   #error "MODULE ID for Wdg_70_RL78F2X.c and Wdg_70_RL78F2X.h are different"
 #endif
-
 #if ( ( WDG_70_AR_RELEASE_MAJOR_VERSION_RL78F2X_C != WDG_70_AR_RELEASE_MAJOR_VERSION_RL78F2X_H ) || \
       ( WDG_70_AR_RELEASE_MINOR_VERSION_RL78F2X_C != WDG_70_AR_RELEASE_MINOR_VERSION_RL78F2X_H ) || \
       ( WDG_70_AR_RELEASE_REVISION_VERSION_RL78F2X_C != WDG_70_AR_RELEASE_REVISION_VERSION_RL78F2X_H ) )
@@ -66,13 +64,13 @@
 
 /***************************************************************************/
 /* ModuleID    : WDG_MODULE_ID (102)                                       */
-/* ServiceID   : --                                                         */
-/* Name        : Wdg_70_RL78F2X_Init                                      */
-/* Param       : void                                                       */
-/* Return      : Std_ReturnType                                             */
-/* Contents    : Refresh internal Watchdog                                  */
-/* Author      : --                                                           */
-/* Note        : [SWS_Wdg_00101] Refresh internal Wdg                       */
+/* ServiceID   : --                                                        */
+/* Name        : Wdg_70_RL78F2X_Init                                       */
+/* Param       : void                                                      */
+/* Return      : Std_ReturnType                                            */
+/* Contents    : Refresh internal Watchdog                                 */
+/* Author      : --                                                        */
+/* Note        : [SWS_Wdg_00101] Refresh internal Wdg                      */
 /***************************************************************************/
 Std_ReturnType Wdg_70_RL78F2X_Init(void)
 {
@@ -89,4 +87,4 @@ Std_ReturnType Wdg_70_RL78F2X_Init(void)
 #define WDG_STOP_SEC_CODE_LOCAL
 #include "Wdg_MemMap.h"
 
-/* EOF Wdg_70_RL78F2X.c **********************************************/```
+/* EOF Wdg_70_RL78F2X.c *******************************************************/

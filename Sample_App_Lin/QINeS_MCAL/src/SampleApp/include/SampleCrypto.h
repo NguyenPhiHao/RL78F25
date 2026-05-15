@@ -8,7 +8,6 @@
 /* Note        : --                                                           */
 /* History     : --                                                           */
 /******************************************************************************/
-
 #ifndef SAMPLE_CRYPTO_H
 #define SAMPLE_CRYPTO_H_
 
@@ -23,7 +22,7 @@
 #include "Sample.h"
 
 /*----------------------------------------------------------------------------*/
-* RSA Key Data
+/* RSA Key Data                                                               */
 /*----------------------------------------------------------------------------*/
 #if ( TRUE == CRYPTO_70_RSA_ENABLE )
 extern uint8 SampleCrypto_RsaKeyN[ CRYPTO_70_NUM_OF_RSAKEY ][ CRYPTO_70_RSA_LENGTH ];
@@ -38,3 +37,5 @@ extern uint8 SampleCrypto_AesCbcIV[ CRYPTO_70_NUM_OF_IV ][ CRYPTO_70_CBC_IV_LENG
 void SampleCrypto(void);
 
 #endif  /* #ifndef SAMPLE_CRYPTO_H */
+
+/* EOF SampleCrypto.h *********************************************************/

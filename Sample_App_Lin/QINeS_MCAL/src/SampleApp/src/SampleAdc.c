@@ -222,3 +222,5 @@ void SampleAdc_GroupNotification_2( void ) {
     }
 #endif
 }
+
+/* EOF SampleAdc.c ************************************************************/

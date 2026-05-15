@@ -59,11 +59,11 @@ extern bool_t SampleGpt_Wakeup;
 #endif
 
 /*----------------------------------------------------------------------------*/
-/* static variables                                            */
+/* static variables                                                           */
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
-/* function prototype declarations                             */
+/* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
 #if ( SAMPLE_GPT_ENABLE != FALSE )
 void SampleGpt( void );
@@ -74,4 +74,6 @@ extern void TAU01Notification( void );
 extern void TRD0Notification( void );
 extern void TRD01Notification( void );
 
-#endif /* SAMPLE_GPT_H */```
+#endif /* SAMPLE_GPT_H */
+
+/* EOF SampleGpt.h ************************************************************/

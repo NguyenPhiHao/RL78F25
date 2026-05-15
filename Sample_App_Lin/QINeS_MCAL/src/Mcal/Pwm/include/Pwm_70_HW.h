@@ -13,7 +13,6 @@
 /******************************************************************************/
 /* Specification of PWM Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef PWM_70_HW_H
 #define PWM_70_HW_H
 
@@ -24,7 +23,7 @@
 #include "Pwm_70_RL78F2X.h"
 
 /*----------------------------------------------------------------------------*/
-/* Source File Version Information                             */
+/* Source File Version Information                                            */
 /*----------------------------------------------------------------------------*/
 #define PWM_70_VENDOR_ID_HW_H                ( 70U )
 #define PWM_70_MODULE_ID_HW_H                ( 121U )
@@ -85,7 +84,7 @@
 /* Pwm_70_RL78F2X.h version check end */
 
 /*----------------------------------------------------------------------------*/
-/* macros                                                     */
+/* macros                                                                     */
 /*----------------------------------------------------------------------------*/
 #define PWM_70_HW_MASTER_CHANNEL_MAX   ( PWM_70_RL78F2X_MASTER_CHANNEL_MAX )
 #define PWM_70_HW_TIMERTYPE_NUM        ( PWM_70_RL78F2X_TIMERTYPE_NUM )
@@ -138,4 +137,4 @@ extern void Pwm_70_HW_ClrInt( const Pwm_70_ChannelInfoType* chInfoPtr );
 
 #endif  /* #ifndef PWM_70_HW_H */
 
-/* EOF Pwm_70_HW.h ****************************************************/
+/* EOF Pwm_70_HW.h ************************************************************/

@@ -61,3 +61,5 @@ void SampleDio(void) {
     }
 }
 #endif  /* SAMPLE_DIO_ENABLE != FALSE */
+
+/* EOF SampleDio.c ************************************************************/

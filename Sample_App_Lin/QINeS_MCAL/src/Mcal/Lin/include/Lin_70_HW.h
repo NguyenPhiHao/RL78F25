@@ -14,14 +14,13 @@
 /******************************************************************************/
 /* Specification of LIN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 #ifndef LIN_70_HW_H
 #define LIN_70_HW_H
 
-/*---------------------------------------------------------------*/
-/* include headers                                               */
-/*---------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* include headers                                                            */
+/*----------------------------------------------------------------------------*/
 #include "ComStack_Types.h"        /* [SWS_Lin_00226] */
 #include "Lin_GeneralTypes.h"      /* [SWS_Lin_00245] */
 #include "Lin_70_Types.h"
@@ -29,9 +28,9 @@
 #include "Lin_Slave_70_RL78F2X.h"
 #include "Lin_Cfg.h"
 
-/*---------------------------------------------------------------*/
-/* file version information                                      */
-/*---------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* file version information                                                   */
+/*----------------------------------------------------------------------------*/
 #define LIN_70_VENDOR_ID_HW_H                ( 70U )
 #define LIN_70_MODULE_ID_HW_H                ( 82U )
 
@@ -43,20 +42,19 @@
 #define LIN_70_SW_MINOR_VERSION_HW_H         ( 0U )
 #define LIN_70_SW_PATCH_VERSION_HW_H         ( 0U )
 
-/*---------------------------------------------------------------*/
-/* file version checks                                           */
-/*---------------------------------------------------------------*/
-/* ------------- no file -------------- */
+/*----------------------------------------------------------------------------*/
+/* file version checks                                                        */
+/*----------------------------------------------------------------------------*/
 
-/*---------------------------------------------------------------*/
-/* extern variable                                               */
-/*---------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* extern variable                                                            */
+/*----------------------------------------------------------------------------*/
 /* Config data pointer */
 extern Lin_70_ChannelStatusType   s_Lin_Status[LIN_70_NUM_OF_CHANNEL];
 
-/*---------------------------------------------------------------*/
-/* macros                                                        */
-/*---------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* macros                                                                     */
+/*----------------------------------------------------------------------------*/
 #define Lin_70_HW_ReadModeStatusReg()                 Lin_70_RL78F2X_ReadModeStatusReg()
 #define Lin_70_HW_SetFrameId( PduInfoPtr )            Lin_70_RL78F2X_SetFrameId( ( PduInfoPtr ) )
 #define Lin_70_HW_SetFrameType( frameType )           Lin_70_RL78F2X_SetFrameType( ( frameType ) )
@@ -73,9 +71,9 @@ extern Lin_70_ChannelStatusType   s_Lin_Status[LIN_70_NUM_OF_CHANNEL];
 #define Lin_70_HW_ClearInterrupts( channelId )        Lin_70_RL78F2X_ClearInterrupts( ( channelId ) )
 #define Lin_70_HW_ModeChange( modeChange, timeout )   Lin_70_RL78F2X_ModeChange( ( modeChange ), ( timeout ) )
 
-/*---------------------------------------------------------------*/
-/* function prototype declarations                               */
-/*---------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* function prototype declarations                                            */
+/*----------------------------------------------------------------------------*/
 void Lin_70_HW_Init( const uint8 chIndex );
 void Lin_70_HW_InitParameter( const uint8 chIndex );
 void Lin_70_HW_SetConfigPtr( const Lin_ConfigType* config );
@@ -84,4 +82,5 @@ void Lin_70_HW_ErrorIndication( uint8 chIndex, Lin_SlaveErrorType errId );
 void Lin_70_HW_ChangeChannel( const uint8 chIndex );
 
 #endif /* #ifndef LIN_70_HW_H */
-/* End Of File */
+
+/* EOF Lin_70_HW.h ************************************************************/

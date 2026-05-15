@@ -9,7 +9,6 @@
 /******************************************************************************/
 /* Specification of Crypto Driver                                             */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef CRYPTO_KEYMANAGEMENT_H
 #define CRYPTO_KEYMANAGEMENT_H
 
@@ -79,5 +78,4 @@ Std_ReturnType crypto_jobErrorCheck   ( Crypto_JobType* job );
 
 #endif  /* CRYPTO_KEYMANAGEMENT_H */
 
-/* EOF Crypto_KeyManagement.h ***********************************************/
-
+/* EOF Crypto_KeyManagement.h *************************************************/

@@ -1960,3 +1960,4 @@ static bool_t crypto_compareData( const uint8* paramA, const uint8* paramB, uint
 
 #endif
  
+/* EOF SampleCrypto.c *********************************************************/

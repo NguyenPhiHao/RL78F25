@@ -9,7 +9,6 @@
 /******************************************************************************/
 /* Specification of Crypto Driver                                             */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 #ifndef CRYPTO_70_CALLOUT_CUSTOMSERVICE_H
 #define CRYPTO_70_CALLOUT_CUSTOMSERVICE_H

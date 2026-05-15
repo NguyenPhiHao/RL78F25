@@ -645,4 +645,3 @@ uint32 Gpt_70_HW_GetPredefTimerValue( Gpt_PredefTimerType PredefTimer )
 #include "Gpt_MemMap.h"
  
 /* EOF Gpt_70_HW.c ************************************************************/
- 

@@ -8,11 +8,10 @@
 /*                layer of the standardized basic software                    */
 /*                architecture of AUTOSAR.                                    */
 /* Author      : --                                                           */
-/* Note        : --                                                           */-                                                          */
+/* Note        : --                                                           */
 /******************************************************************************/
 /* Specification of Flash Driver                                              */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 #ifndef FLS_70_RL78F2X_H
 #define FLS_70_RL78F2X_H

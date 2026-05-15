@@ -8,11 +8,10 @@
 /*               layer of the standardized basic software                     */
 /*               architecture of AUTOSAR.                                     */
 /* Author      : --                                                           */
-/* Note        : --                                                           */-                                                          */
+/* Note        : --                                                           */
 /******************************************************************************/
 /* Specification of Flash Driver                                              */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef FLS_70_HW_H
 #define FLS_70_HW_H
 
@@ -97,4 +96,5 @@
 #define Fls_70_HW_Init()                        Fls_70_RL78F2X_Init()
 #define Fls_70_HW_Execute( pFlsJobControl )     Fls_70_RL78F2X_Execute( pFlsJobControl )
 #endif /* FLS_70_HW_H */
+
 /* EOF Fls_70_HW.h ************************************************************/

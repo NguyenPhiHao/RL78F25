@@ -14,7 +14,6 @@
 /******************************************************************************/
 /* Specification of CAN Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 /*----------------------------------------------------------------------------*/
 /* include headers                                                            */
@@ -186,7 +185,7 @@ static const Can_70_GlobalModeType tableGMode[ 2 ][ 2 ][ 2 ] = {
         }
     }
 };
-   
+
 /* Type:Array[Enum] / Alignment:8byte */
 /* Index:[CSLPSTS][CHLTSTS][CRSTSTS] */
 static const Can_70_ChannelModeType tableCMode[ 2 ][ 2 ][ 2 ] = {
@@ -328,21 +327,21 @@ bool_t Can_70_RL78F2X_CheckBusoff( uint8 Controller, uint8 Channel )
 {
     volatile const Can_70_RL78F2X_RegCommonAType* regCommonA;
     bool_t                                        ret;
- 
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
-   
+
     /* Get register information */
     regCommonA = Can_70_CanControllerRegInfo[ Controller ].ChannelRegInfo[ Channel ].RegCommonA;
-   
+
     ret = FALSE;
     if ( 0x0U != ( regCommonA->C0STSL & CAN_70_RL78F2X_MASK_C0STSL_BOSTS ) ) { /* C0STSL  BOSTS */
         ret = TRUE;
     }
-   
+
     /* Release the can controller */
     CAN_70_CONTROLLER_RELEASE_WITH_EXCLUSIVE();
- 
+
     return ret;
 }
 
@@ -364,12 +363,12 @@ bool_t Can_70_RL78F2X_CheckWakeup( uint8 Controller, uint8 Channel )
 {
     volatile const Can_70_RL78F2X_RegIfxType* regIfx;
     bool_t                                    ret;
-   
+
     ( void )Channel;    /* unused */
-   
+
     /* Get register information */
     regIfx = Can_70_CanControllerRegInfo[ Controller ].RegIfx[ Can_70_InterruptBitAssign[Controller].RCANxWUP.index ];
-   
+
     ret = FALSE;
     if ( 0x0U != ( regIfx->IF & Can_70_InterruptBitAssign[Controller].RCANxWUP.bit ) ) {
         ret = TRUE;
@@ -406,22 +405,22 @@ void Can_70_RL78F2X_GetMode( uint8 Controller, Can_70_ControllerStateInfoType* C
     uint8                                         bitCHLTSTS;
     uint8                                         bitCRSTSTS;
     uint8                                         bitCMDC;
-   
+
     /* Get register information */
     regMkx = Can_70_CanControllerRegInfo[ Controller ].RegMkx[ Can_70_InterruptBitAssign[ Controller ].RCANxWUP.index ];
     regCommonA = Can_70_CanControllerRegInfo[ Controller ].ChannelRegInfo[ 0U ].RegCommonA;
     regCommonB = Can_70_CanControllerRegInfo[ Controller ].RegCommonB;
-   
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
- 
+
     /* Analyze register values related to CAN controller status.*/    
     if ( 0U == ( Can_70_InterruptBitAssign[ Controller ].RCANxWUP.bit & regMkx->MK ) ) {
         bitRCAN0WUPMK = TRUE;
     } else {
         bitRCAN0WUPMK = FALSE;
     }
-   
+
     if ( 0U == ( CAN_70_RL78F2X_MASK_GSTS_GRAMINIT & regCommonB->GSTS ) ) {
         bitGRAMINIT = TRUE;
     } else {
@@ -445,7 +444,7 @@ void Can_70_RL78F2X_GetMode( uint8 Controller, Can_70_ControllerStateInfoType* C
     } else {
         bitGRSTSTS = 0U;
     }
-   
+
     bitGMDC = ( uint8 )( CAN_70_RL78F2X_MASK_GCTRL_GMDC & regCommonB->GCTRL );
    
     if ( 0U != ( CAN_70_RL78F2X_MASK_C0STSL_CSLPSTS & regCommonA->C0STSL ) ) {
@@ -453,24 +452,24 @@ void Can_70_RL78F2X_GetMode( uint8 Controller, Can_70_ControllerStateInfoType* C
     } else {
         bitCSLPSTS = 0U;
     }
- 
+
     if ( 0U != ( CAN_70_RL78F2X_MASK_C0STSL_CHLTSTS & regCommonA->C0STSL ) ) {
         bitCHLTSTS = 1U;
     } else {
         bitCHLTSTS = 0U;
     }
- 
+
     if ( 0U != ( CAN_70_RL78F2X_MASK_C0STSL_CRSTSTS & regCommonA->C0STSL ) ) {
         bitCRSTSTS = 1U;
     } else {
         bitCRSTSTS = 0U;
     }
-   
+
     bitCMDC = ( uint8 )( CAN_70_RL78F2X_MASK_C0CTRL_CHMDC & regCommonA->C0CTRL );
-   
+
     /* Release the can controller */
     CAN_70_CONTROLLER_RELEASE_WITH_EXCLUSIVE();
- 
+
     /* Set return value. */
     CtrlStateInfo->GlobalMode = tableGMode[ bitGSLPSTS ][ bitGHLTSTS ][ bitGRSTSTS ];
     CtrlStateInfo->ChannelMode = tableCMode[ bitCSLPSTS ][ bitCHLTSTS ][ bitCRSTSTS ];
@@ -493,23 +492,23 @@ void Can_70_RL78F2X_GetMode( uint8 Controller, Can_70_ControllerStateInfoType* C
 void Can_70_RL78F2X_SetGlobalMode( uint8 Controller, Can_70_GlobalModeType GlobalMode )
 {
     volatile Can_70_RL78F2X_RegCommonBType* regCommonB;
-   
+
     /* Get register information */
     regCommonB = Can_70_CanControllerRegInfo[ Controller ].RegCommonB;
-   
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
- 
+
     /* GlobalMode is set to CAN_70_GMODE_RESET or CAN_70_GMODE_OPERATION */
     if ( CAN_70_GMODE_RESET == GlobalMode ) {
         regCommonB->GCTRL &= ( ~CAN_70_RL78F2X_MASK_GCTRL_GSLPR );
     } else { /* CAN_70_GMODE_OPERATION */
         regCommonB->GCTRL &= ( ~CAN_70_RL78F2X_MASK_GCTRL_GMDC );
     }
- 
+
     /* Release the can controller */
     CAN_70_CONTROLLER_RELEASE_WITH_EXCLUSIVE();
- 
+
 }
 
 /******************************************************************************/
@@ -529,13 +528,13 @@ void Can_70_RL78F2X_SetChannelMode( uint8 Controller, uint8 Channel, Can_70_Chan
     volatile Can_70_RL78F2X_RegCommonAType* regCommonA;
     uint8                                   bitCSLPSTS;
     uint16                                  bit;
-   
+
     /* Get register information */
     regCommonA = Can_70_CanControllerRegInfo[ Controller ].ChannelRegInfo[ Channel ].RegCommonA;
- 
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
- 
+
     /* Check if channel mode is sleep. */
     bit = regCommonA->C0STSL & CAN_70_RL78F2X_MASK_C0STSL_CSLPSTS;
     if ( 0U != bit ) {
@@ -543,8 +542,7 @@ void Can_70_RL78F2X_SetChannelMode( uint8 Controller, uint8 Channel, Can_70_Chan
     } else {
         bitCSLPSTS = 0U;
     }
- 
- 
+
     /* ChannelMode is set to CAN_70_CMODE_RESET or CAN_70_CMODE_OPERATION */
     if ( CAN_70_CMODE_RESET == ChannelMode ) {
         if ( 1U == bitCSLPSTS ) {
@@ -559,10 +557,10 @@ void Can_70_RL78F2X_SetChannelMode( uint8 Controller, uint8 Channel, Can_70_Chan
         /* Transition to operation mode. */
         regCommonA->C0CTRL &= ( ~CAN_70_RL78F2X_MASK_C0CTRL_CHMDC );
     }
-   
+
     /* Release the can controller */
     CAN_70_CONTROLLER_RELEASE_WITH_EXCLUSIVE();
- 
+
 }
 
 /******************************************************************************/
@@ -580,19 +578,19 @@ void Can_70_RL78F2X_SetChannelMode( uint8 Controller, uint8 Channel, Can_70_Chan
 void Can_70_RL78F2X_SetClock( uint8 Controller, uint8 ClockSource )
 {
     volatile Can_70_RL78F2X_RegCommonBType* regCommonB;
-   
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
- 
+
     /* Get register information */
     regCommonB = Can_70_CanControllerRegInfo[ Controller ].RegCommonB;
-   
+
     regCommonB->GCFGL &= ( ~CAN_70_RL78F2X_MASK_GCFGL_DCS );
     regCommonB->GCFGL |= ClockSource;
-   
+
     /* Release the can controller */
     CAN_70_CONTROLLER_RELEASE_WITH_EXCLUSIVE();
- 
+
 }
 
 /******************************************************************************/
@@ -630,7 +628,7 @@ void Can_70_RL78F2X_SetBaudrate( uint8 Controller, const Can_ConfigSetType* CanC
     uint32                                    nbrb;
     const Can_ControllerType*                 canController;
     uint8_least                               controllerIndex;
- 
+
 #if ( CAN_70_USE_CANFD == TRUE )
    
     volatile Can_70_RL78F2X_RegCommonJType*   regCommonJ;
@@ -647,9 +645,9 @@ void Can_70_RL78F2X_SetBaudrate( uint8 Controller, const Can_ConfigSetType* CanC
     uint16                                    regC0DCFGL;
     uint16                                    regC0FDCFGH;
     uint16                                    regC0FDCFGL;
-   
+
 #endif /* #if ( CAN_70_USE_CANFD == TRUE ) */
-   
+
     /* search can controller setting */
     for ( controllerIndex = 0U; controllerIndex < CAN_70_NUM_OF_CONTROLLER; controllerIndex++ ) {
         canController = &(CanConfigSet)->CanController[ controllerIndex ];
@@ -662,32 +660,32 @@ void Can_70_RL78F2X_SetBaudrate( uint8 Controller, const Can_ConfigSetType* CanC
     if ( NULL_PTR == canController ) {
         return;
     }
- 
+
     /* Select a can controller */
     CAN_70_CONTROLLER_SELECT_WITH_EXCLUSIVE( Controller );
- 
+
     CanCpuClock = canController->CanCpuClockRef;
-   
+
     /* Determine baud rate configuration by parameter BaudRateConfigID. */
     if ( CAN_70_NUM_OF_BAUDRATE_TABLE ==  BaudRateConfigID ) {
         pBaudrateConfig = canController->CanControllerDefaultBaudrate;
     } else {
         pBaudrateConfig = &( canController->CanControllerBaudRateConfig[ BaudRateConfigID ] );
     }
-   
+
     /* Get parameters used to set baud rate. */
     configBaudrate = pBaudrateConfig->CanControllerBaudRate;
     configPropSeg = pBaudrateConfig->CanControllerPropSeg;
     configSeg1 = pBaudrateConfig->CanControllerSeg1;
     configSeg2 = pBaudrateConfig->CanControllerSeg2;
     configJumpWidth = pBaudrateConfig->CanControllerSyncJumpWidth;
-   
+
     /* Check if parameters are in valid range. */
     propSegAndSeg1 = ( uint16 )configPropSeg + ( uint16 )configSeg1;
     if ( ( ( 2U <= propSegAndSeg1  ) && ( 256U >= propSegAndSeg1 ) )
       && ( ( 2U <= configSeg2      ) && ( 128U >= configSeg2 ) )
       && ( ( 1U <= configJumpWidth ) && ( 128U >= configJumpWidth ) ) ) {
-       
+
         /* Generate and set register values. */
         numOfTq = 1U + propSegAndSeg1 + ( uint16 )configSeg2;
         nbrb = ( ( uint32 )( CanCpuClock ) / ( configBaudrate * ( uint32 )numOfTq ) ) - ( uint32 )1U;
@@ -2402,5 +2400,5 @@ void Can_70_RL78F2X_SetCanFd( uint8 Controller, const Can_ConfigSetType* CanConf
  
 #define CAN_STOP_SEC_CODE_LOCAL
 #include "Can_MemMap.h"
-/* EOF Can_70_RL78F2X.c ****************************************************************/
- 
+
+/* EOF Can_70_RL78F2X.c *******************************************************/

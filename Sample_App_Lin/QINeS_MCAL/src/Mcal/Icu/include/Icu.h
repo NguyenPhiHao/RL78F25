@@ -11,7 +11,6 @@
 /******************************************************************************/
 /* Specification of ICU Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
  
 #ifndef ICU_H_
 #define ICU_H_
@@ -270,4 +269,5 @@ extern void Icu_70_getChInfo(uint8 ch, Icu_70_ChannelInfoType** chInfo, Icu_Mode
  
 #endif      /* #ifndef ICU_C_ */
 #endif      /* #ifndef ICU_H_ */
+
 /* EOF Icu.h ******************************************************************/

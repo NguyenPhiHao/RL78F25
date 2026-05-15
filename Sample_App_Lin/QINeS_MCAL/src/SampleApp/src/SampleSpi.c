@@ -142,3 +142,5 @@ void Spi_JobEndNotification_6( void ){}
 void Spi_JobEndNotification_7( void ){}
 void Spi_JobEndNotification_8( void ){}
 void Spi_JobEndNotification_9( void ){}
+
+/* EOF SampleSpi.c ************************************************************/

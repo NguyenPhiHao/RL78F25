@@ -623,4 +623,4 @@ void Mcu_70_RL78F2X_RamStateIsr( void )
 #define MCU_STOP_SEC_CODE_LOCAL
 #include "Mcu_MemMap.h"
  
-/* EOF Mcu_70_RL78F2X.c **********************************************************/
+/* EOF Mcu_70_RL78F2X.c *******************************************************/

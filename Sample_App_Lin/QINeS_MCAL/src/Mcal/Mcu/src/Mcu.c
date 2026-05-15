@@ -612,4 +612,3 @@ Mcu_RamStateType Mcu_GetRamState( void )
 #include "Mcu_MemMap.h"
  
 /* EOF Mcu.c ******************************************************************/
- 

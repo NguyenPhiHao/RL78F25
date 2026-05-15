@@ -55,3 +55,5 @@ void SamplePwm( void );
 #endif
 
 #endif  /* SAMPLE_PWM_H_ */
+
+/* EOF SamplePwm.h ************************************************************/

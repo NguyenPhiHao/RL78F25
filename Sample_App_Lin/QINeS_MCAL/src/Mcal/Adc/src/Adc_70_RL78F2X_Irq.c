@@ -11,7 +11,6 @@
 /******************************************************************************/
 /* Specification of ADC Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 
 /*----------------------------------------------------------------------------*/
@@ -41,7 +40,6 @@
 #if ( ADC_70_VENDOR_ID_IRQ_C != ADC_VENDOR_ID )
 #error "VENDOR ID for Adc_Irq.c and Adc.h are different"
 #endif
-
 #if ( ADC_70_MODULE_ID_IRQ_C != ADC_MODULE_ID )
 #error "MODULE ID for Adc_Irq.c and Adc.h are different"
 #endif
@@ -141,4 +139,4 @@ void Adc_70_Isr_INTADGB( void )
 #define ADC_STOP_SEC_CODE_LOCAL
 #include "Adc_MemMap.h"
 
-/* EOF Adc_Irq.c ***************************************************/
+/* EOF Adc_Irq.c **************************************************************/

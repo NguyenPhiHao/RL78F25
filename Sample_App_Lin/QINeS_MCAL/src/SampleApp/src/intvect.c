@@ -184,50 +184,32 @@ void Sample_Isr_INT0004( void ) {
 #if ( SAMPLE_WDG_ENABLE != FALSE )
     Wdg_70_TimerIsr();
 #endif
-
-
 }
-
 
 /* INT0006 */
 #pragma interrupt Sample_Isr_INT0006( vect=INT0006 )
 void Sample_Isr_INT0006( void ) {
-
-
 }
-
 
 /* INT0008 */
 #pragma interrupt Sample_Isr_INT0008( vect=INT0008 )
 void Sample_Isr_INT0008( void ) {
-
-
 }
-
 
 /* INT000A */
 #pragma interrupt Sample_Isr_INT000A( vect=INT000A )
 void Sample_Isr_INT000A( void ) {
-
-
 }
-
 
 /* INT000C */
 #pragma interrupt Sample_Isr_INT000C( vect=INT000C )
 void Sample_Isr_INT000C( void ) {
-
-
 }
-
 
 /* INT000E */
 #pragma interrupt Sample_Isr_INT000E( vect=INT000E )
 void Sample_Isr_INT000E( void ) {
-
-
 }
-
 
 /* INT0010 */
 #pragma interrupt Sample_Isr_INT0010( vect=INT0010 )
@@ -250,7 +232,6 @@ void Sample_Isr_INT0010( void ) {
     }
 }
 
-
 /* INT0012 */
 #pragma interrupt Sample_Isr_INT0012( vect=INT0012 )
 void Sample_Isr_INT0012( void ) {
@@ -270,7 +251,6 @@ void Sample_Isr_INT0012( void ) {
         /* INTCMP0 interrupt process */
     }
 }
-
 
 /* INT0014 */
 #pragma interrupt Sample_Isr_INT0014( vect=INT0014 )
@@ -293,17 +273,13 @@ void Sample_Isr_INT0014( void ) {
     }
 }
 
-
 /* INT0016 */
 #pragma interrupt Sample_Isr_INT0016( vect=INT0016 )
 void Sample_Isr_INT0016( void ) {
 #if ( SAMPLE_SPI_ENABLE != FALSE )
     Spi_70_Isr_HW00_SndRcvIntr();
 #endif
-
-
 }
-
 
 /* INT0018 */
 #pragma interrupt Sample_Isr_INT0018( vect=INT0018 )
@@ -311,10 +287,7 @@ void Sample_Isr_INT0018( void ) {
 #if ( SAMPLE_SPI_ENABLE != FALSE )
     Spi_70_Isr_HW01_SndRcvIntr();
 #endif
-
-
 }
-
 
 /* INT001A */
 #pragma interrupt Sample_Isr_INT001A( vect=INT001A )
@@ -329,9 +302,7 @@ void Sample_Isr_INT001A( void ) {
     Icu_70_Isr_TRD0();
 #endif
 #endif
-
 }
-
 
 /* INT001C */
 #pragma interrupt Sample_Isr_INT001C( vect=INT001C )
@@ -345,10 +316,7 @@ void Sample_Isr_INT001C( void ) {
     Icu_70_Isr_TRD1();
 #endif
 #endif
-
-
 }
-
 
 /* INT001E */
 #pragma interrupt Sample_Isr_INT001E( vect=INT001E )
@@ -360,9 +328,7 @@ void Sample_Isr_INT001E( void ) {
 #if ( SAMPLE_ADC_ENABLE != FALSE )
     Gpt_70_Isr_TRJ_0_CH0();
 #endif
-
 }
-
 
 /* INT0020 */
 #pragma interrupt Sample_Isr_INT0020( vect=INT0020 )
@@ -370,42 +336,27 @@ void Sample_Isr_INT0020( void ) {
 #if ( SAMPLE_MCU_ENABLE != FALSE )
     Mcu_70_RamStateIsr();
 #endif
-
-
 }
-
 
 /* INT0022 */
 #pragma interrupt Sample_Isr_INT0022( vect=INT0022 )
 void Sample_Isr_INT0022( void ) {
-
-
 }
-
 
 /* INT0024 */
 #pragma interrupt Sample_Isr_INT0024( vect=INT0024 )
 void Sample_Isr_INT0024( void ) {
-
-
 }
-
 
 /* INT0026 */
 #pragma interrupt Sample_Isr_INT0026( vect=INT0026 )
 void Sample_Isr_INT0026( void ) {
-
-
 }
-
 
 /* INT0028 */
 #pragma interrupt Sample_Isr_INT0028( vect=INT0028 )
 void Sample_Isr_INT0028( void ) {
-
-
 }
-
 
 /* INT002A */
 #pragma interrupt Sample_Isr_INT002A( vect=INT002A )
@@ -425,7 +376,6 @@ void Sample_Isr_INT002A( void ) {
     }
 }
 
-
 /* INT002C */
 #pragma interrupt Sample_Isr_INT002C( vect=INT002C )
 void Sample_Isr_INT002C( void ) {
@@ -438,10 +388,7 @@ void Sample_Isr_INT002C( void ) {
       ( SAMPLE_ICU_ENABLE != FALSE ) )
     Pwm_70_Isr_TAU00();
 #endif
-
-
 }
-
 
 /* INT002E */
 #pragma interrupt Sample_Isr_INT002E( vect=INT002E )
@@ -495,7 +442,6 @@ void Sample_Isr_INT0030( void ) {
     }
 }
 
-
 /* INT0032 */
 #pragma interrupt Sample_Isr_INT0032( vect=INT0032 )
 void Sample_Isr_INT0032( void ) {
@@ -517,21 +463,13 @@ void Sample_Isr_INT0032( void ) {
     }
 }
 
-
-
-
-
-
 /* INT0034 */
 #pragma interrupt Sample_Isr_INT0034( vect=INT0034 )
 void Sample_Isr_INT0034( void ) {
 #if ( SAMPLE_ADC_ENABLE != FALSE )
     Adc_70_Isr_INTAD();
 #endif
-
-
 }
-
 
 /* INT0036 */
 #pragma interrupt Sample_Isr_INT0036( vect=INT0036 )
@@ -551,30 +489,20 @@ void Sample_Isr_INT0036( void ) {
     }
 }
 
-
 /* INT0038 */
 #pragma interrupt Sample_Isr_INT0038( vect=INT0038 )
 void Sample_Isr_INT0038( void ) {
-
-
 }
-
 
 /* INT003A */
 #pragma interrupt Sample_Isr_INT003A( vect=INT003A )
 void Sample_Isr_INT003A( void ) {
-
-
 }
-
 
 /* INT003C */
 #pragma interrupt Sample_Isr_INT003C( vect=INT003C )
 void Sample_Isr_INT003C( void ) {
-
-
 }
-
 
 /* INT003E */
 #pragma interrupt Sample_Isr_INT003E( vect=INT003E )
@@ -582,10 +510,7 @@ void Sample_Isr_INT003E( void ) {
 #if ( SAMPLE_SPI_ENABLE != FALSE )
     Spi_70_Isr_HW10_SndRcvIntr();
 #endif
-
-
 }
-
 
 /* INT0040 */
 #pragma interrupt Sample_Isr_INT0040( vect=INT0040 )
@@ -593,18 +518,12 @@ void Sample_Isr_INT0040( void ) {
 #if ( SAMPLE_SPI_ENABLE != FALSE )
     Spi_70_Isr_HW11_SndRcvIntr();
 #endif
-
-
 }
-
 
 /* INT0042 */
 #pragma interrupt Sample_Isr_INT0042( vect=INT0042 )
 void Sample_Isr_INT0042( void ) {
-
-
 }
-
 
 /* INT0044 */
 #pragma interrupt Sample_Isr_INT0044( vect=INT0044 )
@@ -627,7 +546,6 @@ void Sample_Isr_INT0044( void ) {
     }
 }
 
-
 /* INT0046 */
 #pragma interrupt Sample_Isr_INT0046( vect=INT0046 )
 void Sample_Isr_INT0046( void ) {
@@ -648,7 +566,6 @@ void Sample_Isr_INT0046( void ) {
 #endif
     }
 }
-
 
 /* INT0048 */
 #pragma interrupt Sample_Isr_INT0048( vect=INT0048 )
@@ -674,7 +591,6 @@ void Sample_Isr_INT0048( void ) {
     }
 }
 
-
 /* INT004A */
 #pragma interrupt Sample_Isr_INT004A( vect=INT004A )
 void Sample_Isr_INT004A( void ) {
@@ -693,7 +609,6 @@ void Sample_Isr_INT004A( void ) {
     }
 }
 
-
 /* INT004C */
 #pragma interrupt Sample_Isr_INT004C( vect=INT004C )
 void Sample_Isr_INT004C( void ) {
@@ -702,10 +617,7 @@ void Sample_Isr_INT004C( void ) {
       ( SAMPLE_ICU_ENABLE != FALSE ) )
     Pwm_70_Isr_TAU10();
 #endif
-
-
 }
-
 
 /* INT004E */
 #pragma interrupt Sample_Isr_INT004E( vect=INT004E )
@@ -733,7 +645,6 @@ void Sample_Isr_INT004E( void ) {
     }
 }
 
-
 /* INT0050 */
 #pragma interrupt Sample_Isr_INT0050( vect=INT0050 )
 void Sample_Isr_INT0050( void ) {
@@ -754,7 +665,6 @@ void Sample_Isr_INT0050( void ) {
 #endif
     }
 }
-
 
 /* INT0052 */
 #pragma interrupt Sample_Isr_INT0052( vect=INT0052 )
@@ -1056,3 +966,4 @@ void Sample_Isr_INT007C( void ) {
 
 
 
+/* EOF intvect.c **************************************************************/

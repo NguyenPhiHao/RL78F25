@@ -12,7 +12,6 @@
 /******************************************************************************/
 /* Specification of MCU Driver                                                */
 /* R22-11                                                                     */
-/******************************************************************************/
 #ifndef MCU_H
 #define MCU_H
 
@@ -42,7 +41,7 @@
 #define MCU_SW_PATCH_VERSION                (  0U )
 
 /*----------------------------------------------------------------------------*/
-/* version check                                               */
+/* version check                                                              */
 /*----------------------------------------------------------------------------*/
 /* Check if source file and Mcu_70_HW.h header file are of the same vendor */
 #if ( MCU_VENDOR_ID != MCU_70_VENDOR_ID_HW_H )
@@ -119,7 +118,7 @@
 #endif  /* #if ( MCU_GET_RAM_STATE_API != FALSE ) */
 
 /*----------------------------------------------------------------------------*/
-/* macros                                                     */
+/* macros                                                                     */
 /*----------------------------------------------------------------------------*/
 #define MCU_70_INSTANCE_ID                ( 0U )
 
@@ -176,11 +175,11 @@
 #define MCU_16BIT_SIZE                 ( 0x01U )
 
 /*----------------------------------------------------------------------------*/
-/* type definitions                                           */
+/* type definitions                                                           */
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
-/* external variables                                        */
+/* external variables                                                         */
 /*----------------------------------------------------------------------------*/
 #define MCU_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Mcu_MemMap.h"
@@ -193,7 +192,7 @@ extern Mcu_ClockReferencePointType McuClockReferencePointRef[ MCU_70_NUM_OF_REFE
 #include "Mcu_MemMap.h"
 
 /*----------------------------------------------------------------------------*/
-/* function prototype declarations                           */
+/* function prototype declarations                                            */
 /*----------------------------------------------------------------------------*/
 #define MCU_START_SEC_CODE_LOCAL
 #include "Mcu_MemMap.h"
@@ -246,4 +245,4 @@ extern Mcu_RamStateType Mcu_GetRamState( void );
 
 #endif /* #ifndef MCU_H */
 
-/* EOF Mcu.h ***********************************************/
+/* EOF Mcu.h ******************************************************************/

@@ -43,7 +43,7 @@ Std_ReturnType   SampleGpt_Ret;
 #endif
 
 /*----------------------------------------------------------------------------*/
-* functions and function style macros
+/* functions and function style macros                                        */
 /*----------------------------------------------------------------------------*/
 #if ( SAMPLE_GPT_ENABLE != FALSE )
 void SampleGpt( void ) {
@@ -160,3 +160,6 @@ void TRD01Notification( void ) {
 
 void main1s( void ) {
 }
+
+
+/* EOF SampleGpt.c ************************************************************/

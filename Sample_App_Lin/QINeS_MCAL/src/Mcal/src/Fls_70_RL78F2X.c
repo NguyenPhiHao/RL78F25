@@ -800,4 +800,3 @@ fls_70_RL78F2X_CheckCFDFSeqEndStatusType
 #include "Fls_MemMap.h"
  
 /* EOF Fls_70_RL78F2X.c *******************************************************/
- 

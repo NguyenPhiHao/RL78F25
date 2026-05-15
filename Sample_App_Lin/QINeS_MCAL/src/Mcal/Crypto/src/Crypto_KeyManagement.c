@@ -9,7 +9,6 @@
 /******************************************************************************/
 /* Specification of Crypto Driver                                             */
 /* R22-11                                                                     */
-/******************************************************************************/
 
 /*----------------------------------------------------------------------------*/
 /*Expanded function                                                           */
@@ -1364,5 +1363,4 @@ static void crypto_keyGetStatus( uint32 keyIndex, Crypto_KeyStatusType* keyStatu
 #define CRYPTO_STOP_SEC_CODE_LOCAL
 #include "Crypto_MemMap.h"
  
-/* EOF Crypto_KeyManagement.c *********************************************************/
- 
+/* EOF Crypto_KeyManagement.c *************************************************/

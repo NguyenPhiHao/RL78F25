@@ -243,4 +243,4 @@ static void wait_sync(uint32 counter) {
 #endif
 
 
-/* EOF SampleIcu.c ****************
+/* EOF SampleIcu.c ************************************************************/
